@@ -1,0 +1,1308 @@
+[INFO] (utils) Arguments:
+[INFO] (utils)   ablate_cat_emb: True
+[INFO] (utils)   batch_size: 512
+[INFO] (utils)   command: train.py -d ../data/depress_data/depress_train.csv --trial ../data/depress_data/depress_test.csv --iterations 10 --word_list ../data/word_list/depress.txt --emb ../data/glove.840B.300d.txt -o output_dir -b 512 --epochs 15 --lr 0.001 --maxlen 100 -t HHMM_transformer --task 1 --ablate_cat_emb
+[INFO] (utils)   data_path: ../data/depress_data/depress_train.csv
+[INFO] (utils)   dropout_prob: 0.1
+[INFO] (utils)   emb_dim: 300
+[INFO] (utils)   emb_path: ../data/glove.840B.300d.txt
+[INFO] (utils)   epochs: 15
+[INFO] (utils)   humor_data_path: None
+[INFO] (utils)   learn_rate: 0.001
+[INFO] (utils)   loss: ce
+[INFO] (utils)   maxlen: 100
+[INFO] (utils)   model_type: HHMM_transformer
+[INFO] (utils)   non_gate: False
+[INFO] (utils)   out_dir_path: output_dir
+[INFO] (utils)   sarcasm_data_path: None
+[INFO] (utils)   sentiment_data_path: None
+[INFO] (utils)   task_num: 1
+[INFO] (utils)   train_iterations: 10
+[INFO] (utils)   trial_data_path: ../data/depress_data/depress_test.csv
+[INFO] (utils)   vocab_path: None
+[INFO] (utils)   word_list_path: ../data/word_list/depress.txt
+[INFO] (utils)   word_norm: 1
+[INFO] (data_reader) Creating vocabulary.........
+[DEBUG] (jieba) Building prefix dict from the default dictionary ...
+[DEBUG] (jieba) Loading model from cache /tmp/jieba.cache
+[DEBUG] (jieba) Dumping model to file cache /tmp/jieba.cache
+[ERROR] (jieba) Dump cache file failed.
+Traceback (most recent call last):
+  File "/home/ctong/anaconda3/envs/sks/lib/python3.8/site-packages/jieba/__init__.py", line 154, in initialize
+    _replace_file(fpath, cache_file)
+PermissionError: [Errno 1] Operation not permitted: '/tmp/tmpt_lwrnnj' -> '/tmp/jieba.cache'
+[DEBUG] (jieba) Loading model cost 0.516 seconds.
+[DEBUG] (jieba) Prefix dict has been built successfully.
+[INFO] (data_reader)   502269 total words, 27936 unique words
+[INFO] (data_reader)   Vocab size: 27936
+[INFO] (data_reader) <unk> hit rate: 0.00%
+[INFO] (data_reader) <unk> hit rate: 0.00%
+[INFO] (__main__) Statistics:
+[INFO] (__main__)   train_x shape: (14327, 100)
+[INFO] (__main__)   test_x shape:  (3583, 100)
+[INFO] (__main__)   train_chars shape: (14327, 300)
+[INFO] (__main__)   test_chars shape:  (3583, 300)
+[INFO] (__main__)   train_y shape: (14327, 2)
+[INFO] (__main__)   test_y shape:  (3583, 2)
+[INFO] (__main__) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Initial Evaluation:
+[INFO] (models) Building a HHMM_transfermer
+[INFO] (models)   Done
+[INFO] (models) Initializing lookup table
+[INFO] (w2vEmbReader) Loading embeddings from: ../data/glove.840B.300d.txt
+[INFO] (w2vEmbReader)   #vectors: 2195988, #dimensions: 300
+[INFO] (w2vEmbReader) 1104/27936 word vectors initialized (hit rate: 3.95%)
+[INFO] (models)   Done
+[INFO] (__main__) Epoch 0, train: 12s, evaluation: 2s, toaal_time: 14s
+[INFO] (__main__) [Train] loss: 0.4164, metric: 0.7904
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.949205 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.947956 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.949200 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.947956 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 1, train: 5s, evaluation: 0s, toaal_time: 20s
+[INFO] (__main__) [Train] loss: 0.1123, metric: 0.9620
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.949763 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.948037 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.950017 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.948037 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 2, train: 5s, evaluation: 0s, toaal_time: 26s
+[INFO] (__main__) [Train] loss: 0.0645, metric: 0.9789
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.962880 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.961937 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.962892 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.961937 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 3, train: 5s, evaluation: 0s, toaal_time: 32s
+[INFO] (__main__) [Train] loss: 0.0448, metric: 0.9861
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.957298 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.955954 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.957447 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.955954 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 4, train: 5s, evaluation: 0s, toaal_time: 38s
+[INFO] (__main__) [Train] loss: 0.0288, metric: 0.9915
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.935250 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.934437 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.934928 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.934437 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 5, train: 5s, evaluation: 0s, toaal_time: 44s
+[INFO] (__main__) [Train] loss: 0.0241, metric: 0.9944
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.959252 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.958167 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.959290 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.958167 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 6, train: 5s, evaluation: 0s, toaal_time: 51s
+[INFO] (__main__) [Train] loss: 0.0133, metric: 0.9956
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.954228 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.952686 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.954443 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.952686 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 7, train: 5s, evaluation: 0s, toaal_time: 57s
+[INFO] (__main__) [Train] loss: 0.0145, metric: 0.9954
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.960368 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.959437 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.960344 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.959437 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 8, train: 5s, evaluation: 0s, toaal_time: 63s
+[INFO] (__main__) [Train] loss: 0.0078, metric: 0.9977
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.960648 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.959684 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.960642 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.959684 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 9, train: 5s, evaluation: 0s, toaal_time: 69s
+[INFO] (__main__) [Train] loss: 0.0069, metric: 0.9980
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.958973 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.958034 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.958936 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.958034 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 10, train: 5s, evaluation: 0s, toaal_time: 76s
+[INFO] (__main__) [Train] loss: 0.0075, metric: 0.9974
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.950042 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.949248 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.949849 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.949248 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 11, train: 5s, evaluation: 0s, toaal_time: 82s
+[INFO] (__main__) [Train] loss: 0.0114, metric: 0.9978
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.959810 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.958623 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.959908 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.958623 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 12, train: 6s, evaluation: 0s, toaal_time: 89s
+[INFO] (__main__) [Train] loss: 0.0040, metric: 0.9980
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.959531 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.958533 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.959529 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.958533 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 13, train: 6s, evaluation: 0s, toaal_time: 95s
+[INFO] (__main__) [Train] loss: 0.0033, metric: 0.9991
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.952554 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.951133 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.952679 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.951133 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 14, train: 5s, evaluation: 0s, toaal_time: 102s
+[INFO] (__main__) [Train] loss: 0.0101, metric: 0.9969
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.939436 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.938509 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.939190 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.938509 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Training:   89 seconds in total
+[INFO] (__main__) Evaluation: 12 seconds in total
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (model_evaluator) Best @ Epoch 2:
+[INFO] (model_evaluator) BestF1 0.961937 
+[INFO] (model_evaluator) [TEST] report               precision    recall  f1-score   support
+
+           0       0.95      0.96      0.96      1506
+           1       0.97      0.97      0.97      2077
+
+    accuracy                           0.96      3583
+   macro avg       0.96      0.96      0.96      3583
+weighted avg       0.96      0.96      0.96      3583
+
+[INFO] (models) Building a HHMM_transfermer
+[INFO] (models)   Done
+[INFO] (models) Initializing lookup table
+[INFO] (w2vEmbReader) Loading embeddings from: ../data/glove.840B.300d.txt
+[INFO] (w2vEmbReader)   #vectors: 2195988, #dimensions: 300
+[INFO] (w2vEmbReader) 1104/27936 word vectors initialized (hit rate: 3.95%)
+[INFO] (models)   Done
+[INFO] (__main__) Epoch 0, train: 7s, evaluation: 1s, toaal_time: 9s
+[INFO] (__main__) [Train] loss: 0.4382, metric: 0.7894
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.948367 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.946928 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.948448 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.946928 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 1, train: 2s, evaluation: 0s, toaal_time: 12s
+[INFO] (__main__) [Train] loss: 0.1230, metric: 0.9575
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.955066 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.953679 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.955207 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.953679 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 2, train: 2s, evaluation: 0s, toaal_time: 16s
+[INFO] (__main__) [Train] loss: 0.0662, metric: 0.9781
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.958136 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.956899 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.958238 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.956899 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 3, train: 2s, evaluation: 0s, toaal_time: 19s
+[INFO] (__main__) [Train] loss: 0.0443, metric: 0.9839
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.956461 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.954946 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.956692 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.954946 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 4, train: 2s, evaluation: 0s, toaal_time: 22s
+[INFO] (__main__) [Train] loss: 0.0275, metric: 0.9908
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.960089 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.958992 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.960144 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.958992 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 5, train: 2s, evaluation: 0s, toaal_time: 26s
+[INFO] (__main__) [Train] loss: 0.0222, metric: 0.9936
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.948646 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.947751 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.948478 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.947751 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 6, train: 2s, evaluation: 0s, toaal_time: 29s
+[INFO] (__main__) [Train] loss: 0.0134, metric: 0.9953
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.961485 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.960377 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.961562 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.960377 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 7, train: 2s, evaluation: 0s, toaal_time: 32s
+[INFO] (__main__) [Train] loss: 0.0175, metric: 0.9947
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.961206 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.960132 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.961262 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.960132 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 8, train: 2s, evaluation: 0s, toaal_time: 36s
+[INFO] (__main__) [Train] loss: 0.0112, metric: 0.9969
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.962880 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.961881 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.962920 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.961881 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 9, train: 2s, evaluation: 0s, toaal_time: 39s
+[INFO] (__main__) [Train] loss: 0.0075, metric: 0.9976
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.961485 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.960613 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.961446 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.960613 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 10, train: 2s, evaluation: 0s, toaal_time: 42s
+[INFO] (__main__) [Train] loss: 0.0061, metric: 0.9980
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.951437 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.949748 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.951695 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.949748 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 11, train: 2s, evaluation: 0s, toaal_time: 46s
+[INFO] (__main__) [Train] loss: 0.0095, metric: 0.9968
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.958973 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.958151 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.958883 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.958151 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 12, train: 2s, evaluation: 0s, toaal_time: 49s
+[INFO] (__main__) [Train] loss: 0.0049, metric: 0.9980
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.962322 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.961351 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.962341 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.961351 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 13, train: 2s, evaluation: 0s, toaal_time: 53s
+[INFO] (__main__) [Train] loss: 0.0053, metric: 0.9985
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.958136 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.956932 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.958220 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.956932 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 14, train: 2s, evaluation: 0s, toaal_time: 56s
+[INFO] (__main__) [Train] loss: 0.0067, metric: 0.9984
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.959810 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.958793 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.959821 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.958793 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Training:   48 seconds in total
+[INFO] (__main__) Evaluation: 7 seconds in total
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (model_evaluator) Best @ Epoch 2:
+[INFO] (model_evaluator) BestF1 0.961937 
+[INFO] (model_evaluator) [TEST] report               precision    recall  f1-score   support
+
+           0       0.95      0.96      0.96      1506
+           1       0.97      0.97      0.97      2077
+
+    accuracy                           0.96      3583
+   macro avg       0.96      0.96      0.96      3583
+weighted avg       0.96      0.96      0.96      3583
+
+[INFO] (models) Building a HHMM_transfermer
+[INFO] (models)   Done
+[INFO] (models) Initializing lookup table
+[INFO] (w2vEmbReader) Loading embeddings from: ../data/glove.840B.300d.txt
+[INFO] (w2vEmbReader)   #vectors: 2195988, #dimensions: 300
+[INFO] (w2vEmbReader) 1104/27936 word vectors initialized (hit rate: 3.95%)
+[INFO] (models)   Done
+[INFO] (__main__) Epoch 0, train: 10s, evaluation: 2s, toaal_time: 12s
+[INFO] (__main__) [Train] loss: 0.5163, metric: 0.7740
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.912364 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.911137 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.911968 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.911137 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 1, train: 5s, evaluation: 0s, toaal_time: 18s
+[INFO] (__main__) [Train] loss: 0.1327, metric: 0.9525
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.956182 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.954961 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.956250 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.954961 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 2, train: 5s, evaluation: 0s, toaal_time: 24s
+[INFO] (__main__) [Train] loss: 0.0723, metric: 0.9751
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.948646 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.946768 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.948970 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.946768 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 3, train: 5s, evaluation: 0s, toaal_time: 31s
+[INFO] (__main__) [Train] loss: 0.0460, metric: 0.9844
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.963159 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.962287 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.963140 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.962287 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 4, train: 6s, evaluation: 0s, toaal_time: 38s
+[INFO] (__main__) [Train] loss: 0.0263, metric: 0.9922
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.962322 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.961315 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.962359 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.961315 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 5, train: 5s, evaluation: 0s, toaal_time: 44s
+[INFO] (__main__) [Train] loss: 0.0265, metric: 0.9921
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.959810 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.958785 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.959825 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.958785 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 6, train: 5s, evaluation: 0s, toaal_time: 50s
+[INFO] (__main__) [Train] loss: 0.0221, metric: 0.9936
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.962322 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.961372 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.962331 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.961372 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 7, train: 5s, evaluation: 0s, toaal_time: 56s
+[INFO] (__main__) [Train] loss: 0.0105, metric: 0.9970
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.960927 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.959987 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.960913 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.959987 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 8, train: 5s, evaluation: 0s, toaal_time: 62s
+[INFO] (__main__) [Train] loss: 0.0098, metric: 0.9969
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.957857 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.956809 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.957858 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.956809 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 9, train: 5s, evaluation: 0s, toaal_time: 69s
+[INFO] (__main__) [Train] loss: 0.0138, metric: 0.9958
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.961485 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.960517 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.961492 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.960517 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 10, train: 5s, evaluation: 0s, toaal_time: 75s
+[INFO] (__main__) [Train] loss: 0.0052, metric: 0.9986
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.960089 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.958898 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.960193 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.958898 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 11, train: 5s, evaluation: 0s, toaal_time: 81s
+[INFO] (__main__) [Train] loss: 0.0087, metric: 0.9971
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.945297 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.943309 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.945635 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.943309 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 12, train: 5s, evaluation: 0s, toaal_time: 87s
+[INFO] (__main__) [Train] loss: 0.0066, metric: 0.9979
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.956461 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.955438 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.956435 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.955438 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 13, train: 5s, evaluation: 0s, toaal_time: 93s
+[INFO] (__main__) [Train] loss: 0.0054, metric: 0.9988
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.960368 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.959358 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.960383 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.959358 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 14, train: 5s, evaluation: 0s, toaal_time: 99s
+[INFO] (__main__) [Train] loss: 0.0051, metric: 0.9987
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.959810 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.958717 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.959859 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.958717 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Training:   86 seconds in total
+[INFO] (__main__) Evaluation: 12 seconds in total
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (model_evaluator) Best @ Epoch 3:
+[INFO] (model_evaluator) BestF1 0.962287 
+[INFO] (model_evaluator) [TEST] report               precision    recall  f1-score   support
+
+           0       0.96      0.95      0.96      1525
+           1       0.97      0.97      0.97      2058
+
+    accuracy                           0.96      3583
+   macro avg       0.96      0.96      0.96      3583
+weighted avg       0.96      0.96      0.96      3583
+
+[INFO] (models) Building a HHMM_transfermer
+[INFO] (models)   Done
+[INFO] (models) Initializing lookup table
+[INFO] (w2vEmbReader) Loading embeddings from: ../data/glove.840B.300d.txt
+[INFO] (w2vEmbReader)   #vectors: 2195988, #dimensions: 300
+[INFO] (w2vEmbReader) 1104/27936 word vectors initialized (hit rate: 3.95%)
+[INFO] (models)   Done
+[INFO] (__main__) Epoch 0, train: 10s, evaluation: 2s, toaal_time: 12s
+[INFO] (__main__) [Train] loss: 0.4489, metric: 0.7970
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.914318 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.913301 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.913875 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.913301 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 1, train: 5s, evaluation: 0s, toaal_time: 18s
+[INFO] (__main__) [Train] loss: 0.1117, metric: 0.9592
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.956740 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.955795 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.956681 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.955795 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 2, train: 5s, evaluation: 0s, toaal_time: 24s
+[INFO] (__main__) [Train] loss: 0.0671, metric: 0.9776
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.953391 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.951914 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.953558 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.951914 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 3, train: 5s, evaluation: 0s, toaal_time: 30s
+[INFO] (__main__) [Train] loss: 0.0457, metric: 0.9865
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.949484 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.947676 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.949780 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.947676 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 4, train: 5s, evaluation: 0s, toaal_time: 37s
+[INFO] (__main__) [Train] loss: 0.0219, metric: 0.9925
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.939715 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.937186 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.940285 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.937186 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 5, train: 5s, evaluation: 0s, toaal_time: 43s
+[INFO] (__main__) [Train] loss: 0.0200, metric: 0.9930
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.952833 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.951377 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.952981 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.951377 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 6, train: 5s, evaluation: 0s, toaal_time: 49s
+[INFO] (__main__) [Train] loss: 0.0218, metric: 0.9936
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.951996 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.951054 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.951882 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.951054 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 7, train: 5s, evaluation: 0s, toaal_time: 55s
+[INFO] (__main__) [Train] loss: 0.0092, metric: 0.9973
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.962601 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.961613 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.962632 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.961613 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 8, train: 5s, evaluation: 0s, toaal_time: 61s
+[INFO] (__main__) [Train] loss: 0.0143, metric: 0.9955
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.959810 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.958702 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.959867 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.958702 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 9, train: 5s, evaluation: 0s, toaal_time: 68s
+[INFO] (__main__) [Train] loss: 0.0093, metric: 0.9977
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.960648 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.959581 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.960693 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.959581 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 10, train: 6s, evaluation: 0s, toaal_time: 75s
+[INFO] (__main__) [Train] loss: 0.0060, metric: 0.9984
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.953112 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.951460 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.953372 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.951460 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 11, train: 5s, evaluation: 0s, toaal_time: 81s
+[INFO] (__main__) [Train] loss: 0.0095, metric: 0.9965
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.955903 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.954943 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.955840 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.954943 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 12, train: 5s, evaluation: 0s, toaal_time: 87s
+[INFO] (__main__) [Train] loss: 0.0036, metric: 0.9987
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.942506 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.940417 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.942861 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.940417 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 13, train: 5s, evaluation: 0s, toaal_time: 93s
+[INFO] (__main__) [Train] loss: 0.0082, metric: 0.9979
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.958694 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.957617 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.958720 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.957617 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 14, train: 5s, evaluation: 0s, toaal_time: 100s
+[INFO] (__main__) [Train] loss: 0.0030, metric: 0.9992
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.954786 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.953548 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.954846 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.953548 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Training:   87 seconds in total
+[INFO] (__main__) Evaluation: 12 seconds in total
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (model_evaluator) Best @ Epoch 3:
+[INFO] (model_evaluator) BestF1 0.962287 
+[INFO] (model_evaluator) [TEST] report               precision    recall  f1-score   support
+
+           0       0.96      0.95      0.96      1525
+           1       0.97      0.97      0.97      2058
+
+    accuracy                           0.96      3583
+   macro avg       0.96      0.96      0.96      3583
+weighted avg       0.96      0.96      0.96      3583
+
+[INFO] (models) Building a HHMM_transfermer
+[INFO] (models)   Done
+[INFO] (models) Initializing lookup table
+[INFO] (w2vEmbReader) Loading embeddings from: ../data/glove.840B.300d.txt
+[INFO] (w2vEmbReader)   #vectors: 2195988, #dimensions: 300
+[INFO] (w2vEmbReader) 1104/27936 word vectors initialized (hit rate: 3.95%)
+[INFO] (models)   Done
+[INFO] (__main__) Epoch 0, train: 10s, evaluation: 1s, toaal_time: 12s
+[INFO] (__main__) [Train] loss: 0.5031, metric: 0.7776
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.939436 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.938039 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.939387 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.938039 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 1, train: 5s, evaluation: 0s, toaal_time: 18s
+[INFO] (__main__) [Train] loss: 0.1248, metric: 0.9564
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.952554 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.951521 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.952487 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.951521 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 2, train: 5s, evaluation: 0s, toaal_time: 25s
+[INFO] (__main__) [Train] loss: 0.0690, metric: 0.9758
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.956740 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.955534 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.956808 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.955534 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 3, train: 5s, evaluation: 0s, toaal_time: 31s
+[INFO] (__main__) [Train] loss: 0.0397, metric: 0.9859
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.953391 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.952554 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.953249 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.952554 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 4, train: 5s, evaluation: 0s, toaal_time: 37s
+[INFO] (__main__) [Train] loss: 0.0342, metric: 0.9876
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.960648 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.959677 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.960646 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.959677 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 5, train: 5s, evaluation: 0s, toaal_time: 43s
+[INFO] (__main__) [Train] loss: 0.0179, metric: 0.9950
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.961485 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.960510 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.961495 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.960510 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 6, train: 5s, evaluation: 0s, toaal_time: 49s
+[INFO] (__main__) [Train] loss: 0.0170, metric: 0.9947
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.959810 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.958844 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.959796 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.958844 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 7, train: 5s, evaluation: 0s, toaal_time: 55s
+[INFO] (__main__) [Train] loss: 0.0150, metric: 0.9962
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.958136 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.956932 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.958220 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.956932 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 8, train: 5s, evaluation: 0s, toaal_time: 62s
+[INFO] (__main__) [Train] loss: 0.0158, metric: 0.9959
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.958415 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.957404 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.958406 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.957404 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 9, train: 5s, evaluation: 0s, toaal_time: 68s
+[INFO] (__main__) [Train] loss: 0.0056, metric: 0.9981
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.961206 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.960139 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.961258 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.960139 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 10, train: 5s, evaluation: 0s, toaal_time: 74s
+[INFO] (__main__) [Train] loss: 0.0072, metric: 0.9973
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.962043 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.961096 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.962046 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.961096 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 11, train: 5s, evaluation: 0s, toaal_time: 80s
+[INFO] (__main__) [Train] loss: 0.0059, metric: 0.9980
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.962322 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.961351 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.962341 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.961351 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 12, train: 5s, evaluation: 0s, toaal_time: 86s
+[INFO] (__main__) [Train] loss: 0.0060, metric: 0.9981
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.961764 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.960792 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.961776 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.960792 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 13, train: 5s, evaluation: 0s, toaal_time: 92s
+[INFO] (__main__) [Train] loss: 0.0131, metric: 0.9969
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.958136 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.957174 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.958100 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.957174 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 14, train: 5s, evaluation: 0s, toaal_time: 99s
+[INFO] (__main__) [Train] loss: 0.0040, metric: 0.9989
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.958973 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.958062 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.958923 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.958062 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Training:   86 seconds in total
+[INFO] (__main__) Evaluation: 12 seconds in total
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (model_evaluator) Best @ Epoch 3:
+[INFO] (model_evaluator) BestF1 0.962287 
+[INFO] (model_evaluator) [TEST] report               precision    recall  f1-score   support
+
+           0       0.96      0.95      0.96      1525
+           1       0.97      0.97      0.97      2058
+
+    accuracy                           0.96      3583
+   macro avg       0.96      0.96      0.96      3583
+weighted avg       0.96      0.96      0.96      3583
+
+[INFO] (models) Building a HHMM_transfermer
+[INFO] (models)   Done
+[INFO] (models) Initializing lookup table
+[INFO] (w2vEmbReader) Loading embeddings from: ../data/glove.840B.300d.txt
+[INFO] (w2vEmbReader)   #vectors: 2195988, #dimensions: 300
+[INFO] (w2vEmbReader) 1104/27936 word vectors initialized (hit rate: 3.95%)
+[INFO] (models)   Done
+[INFO] (__main__) Epoch 0, train: 10s, evaluation: 2s, toaal_time: 12s
+[INFO] (__main__) [Train] loss: 0.4642, metric: 0.7644
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.918225 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.917052 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.917864 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.917052 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 1, train: 5s, evaluation: 0s, toaal_time: 18s
+[INFO] (__main__) [Train] loss: 0.1208, metric: 0.9586
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.954228 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.952992 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.954279 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.952992 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 2, train: 5s, evaluation: 0s, toaal_time: 24s
+[INFO] (__main__) [Train] loss: 0.0645, metric: 0.9760
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.954228 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.952636 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.954471 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.952636 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 3, train: 5s, evaluation: 0s, toaal_time: 31s
+[INFO] (__main__) [Train] loss: 0.0389, metric: 0.9876
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.958136 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.956778 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.958302 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.956778 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 4, train: 5s, evaluation: 0s, toaal_time: 37s
+[INFO] (__main__) [Train] loss: 0.0230, metric: 0.9935
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.958415 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.957079 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.958573 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.957079 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 5, train: 5s, evaluation: 0s, toaal_time: 43s
+[INFO] (__main__) [Train] loss: 0.0105, metric: 0.9969
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.944739 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.942579 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.945168 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.942579 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 6, train: 5s, evaluation: 0s, toaal_time: 49s
+[INFO] (__main__) [Train] loss: 0.0146, metric: 0.9963
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.946414 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.945678 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.946167 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.945678 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 7, train: 5s, evaluation: 0s, toaal_time: 55s
+[INFO] (__main__) [Train] loss: 0.0051, metric: 0.9990
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.963159 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.962107 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.963230 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.962107 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 8, train: 5s, evaluation: 0s, toaal_time: 62s
+[INFO] (__main__) [Train] loss: 0.0132, metric: 0.9969
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.961206 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.960162 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.961247 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.960162 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 9, train: 5s, evaluation: 0s, toaal_time: 68s
+[INFO] (__main__) [Train] loss: 0.0023, metric: 0.9994
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.960648 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.959787 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.960593 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.959787 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 10, train: 6s, evaluation: 0s, toaal_time: 75s
+[INFO] (__main__) [Train] loss: 0.0029, metric: 0.9993
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.960089 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.959083 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.960098 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.959083 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 11, train: 5s, evaluation: 0s, toaal_time: 81s
+[INFO] (__main__) [Train] loss: 0.0040, metric: 0.9994
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.960927 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.959952 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.960930 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.959952 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 12, train: 5s, evaluation: 0s, toaal_time: 88s
+[INFO] (__main__) [Train] loss: 0.0015, metric: 0.9996
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.960927 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.959973 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.960920 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.959973 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 13, train: 5s, evaluation: 0s, toaal_time: 94s
+[INFO] (__main__) [Train] loss: 0.0016, metric: 0.9994
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.958973 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.958048 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.958929 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.958048 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 14, train: 5s, evaluation: 0s, toaal_time: 100s
+[INFO] (__main__) [Train] loss: 0.0027, metric: 0.9992
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.959810 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.958702 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.959867 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.958702 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Training:   87 seconds in total
+[INFO] (__main__) Evaluation: 13 seconds in total
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (model_evaluator) Best @ Epoch 3:
+[INFO] (model_evaluator) BestF1 0.962287 
+[INFO] (model_evaluator) [TEST] report               precision    recall  f1-score   support
+
+           0       0.96      0.95      0.96      1525
+           1       0.97      0.97      0.97      2058
+
+    accuracy                           0.96      3583
+   macro avg       0.96      0.96      0.96      3583
+weighted avg       0.96      0.96      0.96      3583
+
+[INFO] (models) Building a HHMM_transfermer
+[INFO] (models)   Done
+[INFO] (models) Initializing lookup table
+[INFO] (w2vEmbReader) Loading embeddings from: ../data/glove.840B.300d.txt
+[INFO] (w2vEmbReader)   #vectors: 2195988, #dimensions: 300
+[INFO] (w2vEmbReader) 1104/27936 word vectors initialized (hit rate: 3.95%)
+[INFO] (models)   Done
+[INFO] (__main__) Epoch 0, train: 7s, evaluation: 2s, toaal_time: 9s
+[INFO] (__main__) [Train] loss: 0.4338, metric: 0.7827
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.943623 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.941686 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.943907 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.941686 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 1, train: 2s, evaluation: 0s, toaal_time: 13s
+[INFO] (__main__) [Train] loss: 0.1158, metric: 0.9592
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.949205 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.947370 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.949512 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.947370 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 2, train: 2s, evaluation: 0s, toaal_time: 16s
+[INFO] (__main__) [Train] loss: 0.0579, metric: 0.9802
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.960368 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.959181 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.960473 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.959181 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 3, train: 2s, evaluation: 0s, toaal_time: 19s
+[INFO] (__main__) [Train] loss: 0.0482, metric: 0.9869
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.958694 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.957766 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.958648 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.957766 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 4, train: 2s, evaluation: 0s, toaal_time: 23s
+[INFO] (__main__) [Train] loss: 0.0273, metric: 0.9910
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.957019 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.955679 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.957161 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.955679 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 5, train: 2s, evaluation: 0s, toaal_time: 26s
+[INFO] (__main__) [Train] loss: 0.0211, metric: 0.9930
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.960089 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.959112 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.960084 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.959112 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 6, train: 2s, evaluation: 0s, toaal_time: 29s
+[INFO] (__main__) [Train] loss: 0.0128, metric: 0.9956
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.960648 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.959677 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.960646 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.959677 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 7, train: 2s, evaluation: 0s, toaal_time: 33s
+[INFO] (__main__) [Train] loss: 0.0155, metric: 0.9955
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.955903 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.954609 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.956006 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.954609 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 8, train: 2s, evaluation: 0s, toaal_time: 36s
+[INFO] (__main__) [Train] loss: 0.0131, metric: 0.9955
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.959531 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.958533 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.959529 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.958533 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 9, train: 2s, evaluation: 0s, toaal_time: 40s
+[INFO] (__main__) [Train] loss: 0.0062, metric: 0.9983
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.956182 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.955164 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.956150 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.955164 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 10, train: 2s, evaluation: 0s, toaal_time: 43s
+[INFO] (__main__) [Train] loss: 0.0083, metric: 0.9973
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.953949 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.952854 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.953927 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.952854 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 11, train: 2s, evaluation: 0s, toaal_time: 46s
+[INFO] (__main__) [Train] loss: 0.0098, metric: 0.9984
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.953949 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.952692 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.954007 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.952692 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 12, train: 2s, evaluation: 0s, toaal_time: 50s
+[INFO] (__main__) [Train] loss: 0.0076, metric: 0.9976
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.959810 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.958880 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.959779 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.958880 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 13, train: 2s, evaluation: 0s, toaal_time: 53s
+[INFO] (__main__) [Train] loss: 0.0053, metric: 0.9982
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.931342 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.930574 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.930975 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.930574 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 14, train: 2s, evaluation: 0s, toaal_time: 57s
+[INFO] (__main__) [Train] loss: 0.0070, metric: 0.9978
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.954786 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.953495 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.954873 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.953495 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Training:   48 seconds in total
+[INFO] (__main__) Evaluation: 8 seconds in total
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (model_evaluator) Best @ Epoch 3:
+[INFO] (model_evaluator) BestF1 0.962287 
+[INFO] (model_evaluator) [TEST] report               precision    recall  f1-score   support
+
+           0       0.96      0.95      0.96      1525
+           1       0.97      0.97      0.97      2058
+
+    accuracy                           0.96      3583
+   macro avg       0.96      0.96      0.96      3583
+weighted avg       0.96      0.96      0.96      3583
+
+[INFO] (models) Building a HHMM_transfermer
+[INFO] (models)   Done
+[INFO] (models) Initializing lookup table
+[INFO] (w2vEmbReader) Loading embeddings from: ../data/glove.840B.300d.txt
+[INFO] (w2vEmbReader)   #vectors: 2195988, #dimensions: 300
+[INFO] (w2vEmbReader) 1104/27936 word vectors initialized (hit rate: 3.95%)
+[INFO] (models)   Done
+[INFO] (__main__) Epoch 0, train: 10s, evaluation: 2s, toaal_time: 12s
+[INFO] (__main__) [Train] loss: 0.4600, metric: 0.7795
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.919341 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.915350 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.920475 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.915350 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 1, train: 5s, evaluation: 0s, toaal_time: 19s
+[INFO] (__main__) [Train] loss: 0.1283, metric: 0.9529
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.957298 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.956032 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.957405 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.956032 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 2, train: 5s, evaluation: 0s, toaal_time: 25s
+[INFO] (__main__) [Train] loss: 0.0660, metric: 0.9763
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.961764 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.960813 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.961766 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.960813 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 3, train: 5s, evaluation: 0s, toaal_time: 31s
+[INFO] (__main__) [Train] loss: 0.0505, metric: 0.9853
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.963438 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.962489 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.963460 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.962489 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 4, train: 5s, evaluation: 0s, toaal_time: 37s
+[INFO] (__main__) [Train] loss: 0.0267, metric: 0.9895
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.962880 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.961944 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.962889 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.961944 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 5, train: 5s, evaluation: 0s, toaal_time: 44s
+[INFO] (__main__) [Train] loss: 0.0189, metric: 0.9940
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.956740 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.955617 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.956766 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.955617 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 6, train: 5s, evaluation: 0s, toaal_time: 50s
+[INFO] (__main__) [Train] loss: 0.0170, metric: 0.9945
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.961206 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.960191 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.961232 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.960191 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 7, train: 5s, evaluation: 0s, toaal_time: 56s
+[INFO] (__main__) [Train] loss: 0.0114, metric: 0.9966
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.953391 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.952266 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.953377 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.952266 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 8, train: 5s, evaluation: 0s, toaal_time: 62s
+[INFO] (__main__) [Train] loss: 0.0127, metric: 0.9952
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.957857 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.956698 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.957914 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.956698 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 9, train: 5s, evaluation: 0s, toaal_time: 69s
+[INFO] (__main__) [Train] loss: 0.0067, metric: 0.9979
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.957298 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.956498 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.957181 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.956498 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 10, train: 5s, evaluation: 0s, toaal_time: 75s
+[INFO] (__main__) [Train] loss: 0.0065, metric: 0.9983
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.958136 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.956924 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.958224 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.956924 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 11, train: 5s, evaluation: 0s, toaal_time: 81s
+[INFO] (__main__) [Train] loss: 0.0058, metric: 0.9976
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.959810 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.958778 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.959828 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.958778 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 12, train: 5s, evaluation: 0s, toaal_time: 87s
+[INFO] (__main__) [Train] loss: 0.0054, metric: 0.9981
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.958415 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.957335 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.958439 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.957335 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 13, train: 5s, evaluation: 0s, toaal_time: 93s
+[INFO] (__main__) [Train] loss: 0.0060, metric: 0.9987
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.958136 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.956890 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.958242 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.956890 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 14, train: 5s, evaluation: 0s, toaal_time: 100s
+[INFO] (__main__) [Train] loss: 0.0059, metric: 0.9982
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.953391 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.952037 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.953492 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.952037 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Training:   87 seconds in total
+[INFO] (__main__) Evaluation: 13 seconds in total
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (model_evaluator) Best @ Epoch 3:
+[INFO] (model_evaluator) BestF1 0.962489 
+[INFO] (model_evaluator) [TEST] report               precision    recall  f1-score   support
+
+           0       0.95      0.96      0.96      1500
+           1       0.97      0.97      0.97      2083
+
+    accuracy                           0.96      3583
+   macro avg       0.96      0.96      0.96      3583
+weighted avg       0.96      0.96      0.96      3583
+
+[INFO] (models) Building a HHMM_transfermer
+[INFO] (models)   Done
+[INFO] (models) Initializing lookup table
+[INFO] (w2vEmbReader) Loading embeddings from: ../data/glove.840B.300d.txt
+[INFO] (w2vEmbReader)   #vectors: 2195988, #dimensions: 300
+[INFO] (w2vEmbReader) 1104/27936 word vectors initialized (hit rate: 3.95%)
+[INFO] (models)   Done
+[INFO] (__main__) Epoch 0, train: 10s, evaluation: 2s, toaal_time: 12s
+[INFO] (__main__) [Train] loss: 0.4503, metric: 0.7834
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.939436 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.938214 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.939308 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.938214 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 1, train: 5s, evaluation: 0s, toaal_time: 18s
+[INFO] (__main__) [Train] loss: 0.1143, metric: 0.9593
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.954786 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.953253 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.955004 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.953253 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 2, train: 5s, evaluation: 0s, toaal_time: 25s
+[INFO] (__main__) [Train] loss: 0.0700, metric: 0.9756
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.958415 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.957165 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.958527 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.957165 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 3, train: 5s, evaluation: 0s, toaal_time: 31s
+[INFO] (__main__) [Train] loss: 0.0413, metric: 0.9856
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.934692 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.933829 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.934380 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.933829 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 4, train: 5s, evaluation: 0s, toaal_time: 37s
+[INFO] (__main__) [Train] loss: 0.0329, metric: 0.9890
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.952833 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.951434 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.952950 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.951434 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 5, train: 5s, evaluation: 0s, toaal_time: 43s
+[INFO] (__main__) [Train] loss: 0.0194, metric: 0.9934
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.958136 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.957129 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.958121 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.957129 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 6, train: 5s, evaluation: 0s, toaal_time: 49s
+[INFO] (__main__) [Train] loss: 0.0145, metric: 0.9956
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.958136 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.956973 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.958199 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.956973 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 7, train: 5s, evaluation: 0s, toaal_time: 55s
+[INFO] (__main__) [Train] loss: 0.0161, metric: 0.9957
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.956182 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.955290 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.956092 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.955290 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 8, train: 6s, evaluation: 0s, toaal_time: 62s
+[INFO] (__main__) [Train] loss: 0.0139, metric: 0.9964
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.960089 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.959183 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.960050 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.959183 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 9, train: 5s, evaluation: 0s, toaal_time: 69s
+[INFO] (__main__) [Train] loss: 0.0100, metric: 0.9971
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.960927 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.959923 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.960944 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.959923 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 10, train: 5s, evaluation: 0s, toaal_time: 75s
+[INFO] (__main__) [Train] loss: 0.0090, metric: 0.9979
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.956461 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.955445 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.956431 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.955445 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 11, train: 5s, evaluation: 0s, toaal_time: 81s
+[INFO] (__main__) [Train] loss: 0.0054, metric: 0.9985
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.958973 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.957813 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.959045 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.957813 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 12, train: 5s, evaluation: 0s, toaal_time: 87s
+[INFO] (__main__) [Train] loss: 0.0090, metric: 0.9978
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.957019 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.955859 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.957067 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.955859 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 13, train: 5s, evaluation: 0s, toaal_time: 93s
+[INFO] (__main__) [Train] loss: 0.0049, metric: 0.9987
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.958136 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.957084 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.958143 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.957084 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 14, train: 5s, evaluation: 0s, toaal_time: 100s
+[INFO] (__main__) [Train] loss: 0.0049, metric: 0.9983
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.957857 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.956943 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.957795 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.956943 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Training:   86 seconds in total
+[INFO] (__main__) Evaluation: 13 seconds in total
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (model_evaluator) Best @ Epoch 3:
+[INFO] (model_evaluator) BestF1 0.962489 
+[INFO] (model_evaluator) [TEST] report               precision    recall  f1-score   support
+
+           0       0.95      0.96      0.96      1500
+           1       0.97      0.97      0.97      2083
+
+    accuracy                           0.96      3583
+   macro avg       0.96      0.96      0.96      3583
+weighted avg       0.96      0.96      0.96      3583
+
+[INFO] (models) Building a HHMM_transfermer
+[INFO] (models)   Done
+[INFO] (models) Initializing lookup table
+[INFO] (w2vEmbReader) Loading embeddings from: ../data/glove.840B.300d.txt
+[INFO] (w2vEmbReader)   #vectors: 2195988, #dimensions: 300
+[INFO] (w2vEmbReader) 1104/27936 word vectors initialized (hit rate: 3.95%)
+[INFO] (models)   Done
+[INFO] (__main__) Epoch 0, train: 10s, evaluation: 2s, toaal_time: 12s
+[INFO] (__main__) [Train] loss: 0.4779, metric: 0.7784
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.887804 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.880085 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.890792 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.880085 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 1, train: 5s, evaluation: 0s, toaal_time: 18s
+[INFO] (__main__) [Train] loss: 0.1316, metric: 0.9509
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.872453 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.861865 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.877096 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.861865 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 2, train: 5s, evaluation: 0s, toaal_time: 24s
+[INFO] (__main__) [Train] loss: 0.0728, metric: 0.9742
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.924644 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.920845 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.925748 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.920845 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 3, train: 5s, evaluation: 0s, toaal_time: 30s
+[INFO] (__main__) [Train] loss: 0.0480, metric: 0.9839
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.955903 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.954555 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.956034 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.954555 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 4, train: 5s, evaluation: 0s, toaal_time: 37s
+[INFO] (__main__) [Train] loss: 0.0314, metric: 0.9892
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.951996 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.950272 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.952280 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.950272 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 5, train: 5s, evaluation: 0s, toaal_time: 43s
+[INFO] (__main__) [Train] loss: 0.0203, metric: 0.9930
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.946135 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.944134 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.946492 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.944134 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 6, train: 5s, evaluation: 0s, toaal_time: 49s
+[INFO] (__main__) [Train] loss: 0.0196, metric: 0.9948
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.946972 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.945009 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.947320 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.945009 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 7, train: 5s, evaluation: 0s, toaal_time: 55s
+[INFO] (__main__) [Train] loss: 0.0139, metric: 0.9957
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.958973 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.957837 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.959033 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.957837 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 8, train: 5s, evaluation: 0s, toaal_time: 61s
+[INFO] (__main__) [Train] loss: 0.0124, metric: 0.9960
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.960089 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.959119 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.960081 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.959119 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 9, train: 5s, evaluation: 0s, toaal_time: 68s
+[INFO] (__main__) [Train] loss: 0.0093, metric: 0.9978
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.948088 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.946131 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.948449 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.946131 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 10, train: 5s, evaluation: 0s, toaal_time: 74s
+[INFO] (__main__) [Train] loss: 0.0074, metric: 0.9977
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.957298 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.956100 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.957369 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.956100 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 11, train: 5s, evaluation: 0s, toaal_time: 80s
+[INFO] (__main__) [Train] loss: 0.0052, metric: 0.9985
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.958973 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.957707 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.959102 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.957707 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 12, train: 6s, evaluation: 0s, toaal_time: 87s
+[INFO] (__main__) [Train] loss: 0.0051, metric: 0.9989
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.950879 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.949105 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.951176 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.949105 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 13, train: 5s, evaluation: 0s, toaal_time: 93s
+[INFO] (__main__) [Train] loss: 0.0056, metric: 0.9985
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.956461 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.955122 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.956595 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.955122 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Epoch 14, train: 5s, evaluation: 0s, toaal_time: 100s
+[INFO] (__main__) [Train] loss: 0.0022, metric: 0.9993
+[INFO] (model_evaluator) Evaluation on test data: acc = 0.941669 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs = 0.939449 
+[INFO] (model_evaluator) Evaluation on test data: f1_hs_wei = 0.942086 
+[INFO] (model_evaluator) Evaluation on test data: f1_all = 0.939449 
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Training:   87 seconds in total
+[INFO] (__main__) Evaluation: 13 seconds in total
+[INFO] (model_evaluator) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (model_evaluator) Best @ Epoch 3:
+[INFO] (model_evaluator) BestF1 0.962489 
+[INFO] (model_evaluator) [TEST] report               precision    recall  f1-score   support
+
+           0       0.95      0.96      0.96      1500
+           1       0.97      0.97      0.97      2083
+
+    accuracy                           0.96      3583
+   macro avg       0.96      0.96      0.96      3583
+weighted avg       0.96      0.96      0.96      3583
+
