@@ -7,7 +7,10 @@ import nltk
 import numpy as np
 import pandas as pd
 from nltk.text import TextCollection
+
+# 添加中文分词
 import jieba
+
 
 nltk.download('punkt')
 
